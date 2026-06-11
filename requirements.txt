@@ -1,0 +1,31 @@
+# ========================================
+# Fitify ML — Dependencies
+# ========================================
+
+# --- Deep Learning ---
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.30.0
+
+# --- Video Processing ---
+opencv-python>=4.8.0
+decord>=0.6.0
+
+# --- Pose Estimation ---
+mediapipe>=0.10.0
+
+# --- Web Framework ---
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# --- Data Science ---
+numpy>=1.24.0
+scipy>=1.11.0
+scikit-learn>=1.3.0
+
+# --- Dataset ---
+kagglehub>=0.2.0
+
+# --- Utilities ---
+tqdm>=4.65.0
+pillow>=10.0.0

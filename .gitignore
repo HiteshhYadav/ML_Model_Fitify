@@ -1,0 +1,42 @@
+# ========================================
+# Fitify ML — Git Ignore
+# ========================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# Data & Models (large files)
+data/raw/
+data/verified_data/
+data/test/
+checkpoints/
+results/
+uploads/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Kaggle
+kaggle.json

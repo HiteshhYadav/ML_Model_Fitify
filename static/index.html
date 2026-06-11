@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitify ML — AI Exercise Form Analyzer</title>
+    <meta name="description" content="Upload your workout video and get AI-powered form analysis with detailed feedback, rep counting, and improvement suggestions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <div class="nav-logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6.5 6.5h11M6.5 17.5h11M4 6.5V4.5a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2V6.5M4 17.5v2a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-2M16 6.5V4.5a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2V6.5M16 17.5v2a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2v-2M4 12h16"/>
+                </svg>
+            </div>
+            <span class="nav-title">Fitify <span class="nav-highlight">ML</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#upload" class="nav-link">Analyze</a>
+            <a href="#features" class="nav-link">Features</a>
+            <div class="nav-status" id="api-status">
+                <span class="status-dot"></span>
+                <span class="status-text">Checking...</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-icon">⚡</span>
+                <span>AI-Powered Exercise Analysis</span>
+            </div>
+            <h1 class="hero-title">
+                Perfect Your
+                <span class="gradient-text">Workout Form</span>
+                With AI
+            </h1>
+            <p class="hero-subtitle">
+                Upload your exercise video and get instant, detailed feedback on your form.
+                Our AI detects mistakes, counts reps, and provides personalized improvement suggestions.
+            </p>
+            <div class="hero-actions">
+                <a href="#upload" class="btn btn-primary btn-large">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                    Upload Video
+                </a>
+                <a href="#features" class="btn btn-ghost btn-large">Learn More</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">23+</span>
+                    <span class="stat-label">Exercises</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">33</span>
+                    <span class="stat-label">Body Points</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">Real-time</span>
+                    <span class="stat-label">Analysis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Three simple steps to improve your workout form</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="--accent: #6C63FF;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Upload Video</h3>
+                    <p class="feature-desc">Record your exercise and upload the video. We support MP4, AVI, MOV, and more.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="--accent: #00D4AA;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">AI Analysis</h3>
+                    <p class="feature-desc">Our AI identifies the exercise, tracks 33 body points, and evaluates your form against ideal biomechanics.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="--accent: #FF6B9D;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Get Feedback</h3>
+                    <p class="feature-desc">Receive a detailed report with scores, specific corrections, and actionable improvement tips.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="upload-section" id="upload">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Analyze Your Form</h2>
+                <p class="section-subtitle">Upload a workout video to get started</p>
+            </div>
+
+            <div class="upload-area" id="upload-area">
+                <div class="upload-dropzone" id="dropzone">
+                    <input type="file" id="video-input" accept="video/*" hidden>
+                    <div class="dropzone-content" id="dropzone-content">
+                        <div class="dropzone-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+                                <line x1="7" y1="2" x2="7" y2="22"/>
+                                <line x1="17" y1="2" x2="17" y2="22"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <line x1="2" y1="7" x2="7" y2="7"/>
+                                <line x1="2" y1="17" x2="7" y2="17"/>
+                                <line x1="17" y1="7" x2="22" y2="7"/>
+                                <line x1="17" y1="17" x2="22" y2="17"/>
+                            </svg>
+                        </div>
+                        <h3 class="dropzone-title">Drop your video here</h3>
+                        <p class="dropzone-text">or click to browse</p>
+                        <p class="dropzone-formats">MP4, AVI, MOV, MKV, WebM • Max 100MB</p>
+                    </div>
+                    <!-- Video Preview -->
+                    <div class="video-preview" id="video-preview" style="display:none;">
+                        <video id="preview-player" controls></video>
+                        <div class="preview-info" id="preview-info"></div>
+                        <button class="btn btn-ghost btn-small" id="clear-video">Change Video</button>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-large btn-analyze" id="analyze-btn" disabled>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                    </svg>
+                    Analyze Form
+                </button>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading-container" id="loading" style="display:none;">
+                <div class="loading-card">
+                    <div class="loading-spinner">
+                        <div class="spinner-ring"></div>
+                        <div class="spinner-icon">🏋️</div>
+                    </div>
+                    <h3 class="loading-title">Analyzing Your Form...</h3>
+                    <p class="loading-text" id="loading-text">Detecting pose landmarks...</p>
+                    <div class="loading-steps">
+                        <div class="step active" id="step-1">
+                            <span class="step-dot"></span>
+                            <span>Classifying exercise</span>
+                        </div>
+                        <div class="step" id="step-2">
+                            <span class="step-dot"></span>
+                            <span>Extracting pose data</span>
+                        </div>
+                        <div class="step" id="step-3">
+                            <span class="step-dot"></span>
+                            <span>Analyzing form quality</span>
+                        </div>
+                        <div class="step" id="step-4">
+                            <span class="step-dot"></span>
+                            <span>Generating report</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="results" style="display:none;">
+        <div class="container">
+            <!-- Score Header -->
+            <div class="results-header" id="results-header">
+                <div class="score-card">
+                    <div class="score-ring-container">
+                        <svg class="score-ring" viewBox="0 0 120 120">
+                            <circle class="score-ring-bg" cx="60" cy="60" r="52" />
+                            <circle class="score-ring-fill" id="score-ring-fill" cx="60" cy="60" r="52"
+                                stroke-dasharray="326.73" stroke-dashoffset="326.73" />
+                        </svg>
+                        <div class="score-value" id="score-value">0</div>
+                    </div>
+                    <div class="score-label">Overall Score</div>
+                    <div class="score-grade" id="score-grade">-</div>
+                </div>
+                <div class="results-summary">
+                    <h2 class="results-title" id="results-title">Exercise Analysis</h2>
+                    <p class="results-subtitle" id="results-subtitle">-</p>
+                    <div class="results-meta">
+                        <div class="meta-item" id="meta-exercise">
+                            <span class="meta-icon">🏋️</span>
+                            <span class="meta-label">Exercise</span>
+                            <span class="meta-value" id="exercise-name">-</span>
+                        </div>
+                        <div class="meta-item" id="meta-confidence">
+                            <span class="meta-icon">🎯</span>
+                            <span class="meta-label">Confidence</span>
+                            <span class="meta-value" id="exercise-confidence">-</span>
+                        </div>
+                        <div class="meta-item" id="meta-reps">
+                            <span class="meta-icon">🔄</span>
+                            <span class="meta-label">Reps</span>
+                            <span class="meta-value" id="rep-count">-</span>
+                        </div>
+                        <div class="meta-item" id="meta-time">
+                            <span class="meta-icon">⏱️</span>
+                            <span class="meta-label">Duration</span>
+                            <span class="meta-value" id="video-duration">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Feedback Cards -->
+            <div class="feedback-section">
+                <h3 class="feedback-title">Form Analysis</h3>
+                <div class="feedback-grid" id="feedback-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="timeline-section" id="timeline-section">
+                <h3 class="timeline-title">Form Quality Over Time</h3>
+                <div class="timeline-chart" id="timeline-chart">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Analysis Meta -->
+            <div class="meta-section">
+                <div class="meta-grid" id="meta-grid">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="results-actions">
+                <button class="btn btn-primary btn-large" id="analyze-another">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 4 23 10 17 10"/>
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                    </svg>
+                    Analyze Another Video
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="nav-title">Fitify <span class="nav-highlight">ML</span></span>
+                    <p class="footer-desc">AI-powered exercise form analysis using VideoMAE and MediaPipe.</p>
+                </div>
+                <div class="footer-tech">
+                    <span class="tech-badge">VideoMAE</span>
+                    <span class="tech-badge">MediaPipe</span>
+                    <span class="tech-badge">PyTorch</span>
+                    <span class="tech-badge">Flask</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
