@@ -49,7 +49,7 @@ class PoseEstimator:
 
         self.pose = self.mp_pose.Pose(
             static_image_mode=False,
-            model_complexity=2,
+            model_complexity=1,  # complexity=2 segfaults on Windows w/ mediapipe 0.10.14
             enable_segmentation=False,
             min_detection_confidence=min_detection_confidence,
             min_tracking_confidence=min_tracking_confidence,
